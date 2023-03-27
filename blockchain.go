@@ -6,6 +6,7 @@ import (
 	"time"
 )
 
+//Bock is a block in the blockchain
 type Block struct {
 	nonce        int
 	previousHash string
@@ -13,6 +14,7 @@ type Block struct {
 	transactions []string
 }
 
+//NewBlock creates a new block
 func NewBlock(nonce int, previousHash string) *Block {
 	b := new(Block)
 	b.timestamp = time.Now().UnixNano()
@@ -21,6 +23,7 @@ func NewBlock(nonce int, previousHash string) *Block {
 	return b
 }
 
+//Print prints the block
 func (b *Block) Print() {
 	fmt.Printf("timestamp       %d\n", b.timestamp)
 	fmt.Printf("nonce           %d\n", b.nonce)
